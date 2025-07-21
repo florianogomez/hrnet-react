@@ -1,0 +1,115 @@
+//
+// HRNet Home Page Styles
+//
+
+.home-page {
+  .hero-section {
+    background: linear-gradient(135deg, var(--hrnet-primary) 0%, #1e40af 100%);
+    color: white;
+    padding: 4rem 0;
+    margin-bottom: 3rem;
+    border-radius: 12px;
+    text-align: center;
+    
+    .display-4 {
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      
+      .bi {
+        color: rgba(255, 255, 255, 0.9);
+      }
+    }
+    
+    .lead {
+      font-size: 1.25rem;
+      opacity: 0.95;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+  
+  .feature-cards {
+    .card {
+      transition: all 0.3s ease;
+      border: none;
+      height: 100%;
+      
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+      
+      .card-body {
+        text-align: center;
+        padding: 2rem 1.5rem;
+        
+        .bi {
+          margin-bottom: 1rem;
+        }
+        
+        .card-title {
+          color: var(--hrnet-text-dark);
+          font-weight: 600;
+          margin-bottom: 1rem;
+        }
+        
+        .card-text {
+          color: var(--hrnet-text-muted);
+          line-height: 1.6;
+          margin-bottom: 1.5rem;
+        }
+      }
+      
+      &.border-primary {
+        border-left: 4px solid var(--hrnet-primary) !important;
+        
+        .btn {
+          background-color: var(--hrnet-primary);
+          border-color: var(--hrnet-primary);
+        }
+      }
+      
+      &.border-success {
+        border-left: 4px solid var(--hrnet-success) !important;
+        
+        .btn {
+          background-color: var(--hrnet-success);
+          border-color: var(--hrnet-success);
+        }
+      }
+      
+      &.border-info {
+        border-left: 4px solid var(--hrnet-info) !important;
+        
+        .btn {
+          background-color: var(--hrnet-info);
+          border-color: var(--hrnet-info);
+        }
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .home-page {
+    .hero-section {
+      padding: 2.5rem 1rem;
+      margin-bottom: 2rem;
+      
+      .display-4 {
+        font-size: 2.5rem;
+      }
+      
+      .lead {
+        font-size: 1.1rem;
+      }
+    }
+    
+    .feature-cards {
+      .card {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}

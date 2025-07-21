@@ -1,0 +1,21 @@
+{
+	"entryPoints": ["app/"],
+	"entryPointStrategy": "expand",
+	"out": "docs",
+	"includeVersion": true,
+	"readme": "README.md",
+	"name": "HRNet Documentation",
+	"gitRevision": "main",
+	"theme": "hierarchy",
+	"plugin": ["typedoc-theme-hierarchy", "typedoc-plugin-mermaid", "typedoc-plugin-rename-defaults"],
+	"categorizeByGroup": true,
+	"searchInComments": true,
+	"darkHighlightTheme": "dark-plus",
+	"lightHighlightTheme": "light-plus",
+	"validation": {
+		"notExported": false,
+		"invalidLink": true,
+		"notDocumented": false
+	},
+	"sort": ["source-order"]
+}

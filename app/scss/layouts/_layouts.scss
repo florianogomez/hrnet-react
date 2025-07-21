@@ -1,0 +1,376 @@
+/**
+ * Layout Styles - Enterprise Grade
+ * Styles pour les layouts de l'application HRNet
+ */
+
+/**
+ * Layouts SCSS - HRNet Interface Épurée
+ * Layout horizontal uniquement avec design moderne
+ */
+
+// Layout horizontal épuré
+.horizontal-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .horizontal-nav {
+    background: var(--bs-white) !important;
+    border-bottom: 1px solid var(--bs-border-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--bs-primary);
+    }
+
+    .nav-link {
+      border-radius: 8px;
+      margin: 0 0.25rem;
+      transition: all 0.2s ease;
+      font-weight: 500;
+
+      &:hover {
+        background-color: var(--bs-primary-bg-subtle);
+        color: var(--bs-primary);
+      }
+
+      &.active {
+        background-color: var(--bs-primary);
+        color: white;
+      }
+    }
+  }
+
+  .page-content {
+    flex: 1;
+    background: var(--bs-gray-100);
+    
+    .page-container {
+      padding: 2rem;
+      max-width: 100%;
+    }
+  }
+}
+
+// Variables pour design épuré
+:root {
+  --hrnet-nav-height: 70px;
+  --hrnet-content-padding: 2rem;
+}
+
+// Layout wrapper principal
+.wrapper {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	
+	&.vertical-layout {
+		.main-container {
+			flex: 1;
+			padding-top: var(--topbar-height);
+		}
+	}
+	
+	&.horizontal-layout {
+		.page-content {
+			padding-top: calc(var(--topbar-height) + var(--horizontal-nav-height));
+		}
+	}
+}
+
+// Topbar/Header
+.topbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: var(--topbar-height);
+	z-index: 1030;
+	background: white;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+	
+	.sidebar-toggle {
+		border: none;
+		background: none;
+		color: var(--hrnet-primary);
+		transition: all 0.2s ease;
+		
+		&:hover {
+			color: var(--hrnet-primary-dark);
+			background: rgba(var(--hrnet-primary-rgb), 0.1);
+		}
+	}
+	
+	.dropdown-menu {
+		border: none;
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+		border-radius: 8px;
+		
+		.dropdown-item {
+			padding: 0.75rem 1rem;
+			transition: all 0.2s ease;
+			
+			&:hover {
+				background: rgba(var(--hrnet-primary-rgb), 0.1);
+				color: var(--hrnet-primary);
+			}
+		}
+	}
+}
+
+// Sidebar (Navigation verticale)
+.sidebar {
+	position: fixed;
+	top: var(--topbar-height);
+	left: 0;
+	width: var(--sidebar-width);
+	height: calc(100vh - var(--topbar-height));
+	background: white;
+	border-right: 1px solid rgba(0, 0, 0, 0.125);
+	z-index: 1020;
+	overflow-y: auto;
+	transition: all 0.3s ease;
+	
+	&.sidebar-compact {
+		width: var(--sidebar-compact-width);
+		
+		.nav-link {
+			justify-content: center;
+			
+			span {
+				display: none;
+			}
+		}
+	}
+	
+	.sidebar-content {
+		padding: 1rem 0;
+	}
+	
+	.nav-link {
+		padding: 0.75rem 1rem;
+		margin: 0.25rem 0.5rem;
+		border-radius: 8px;
+		color: var(--bs-gray-700);
+		text-decoration: none;
+		transition: all 0.2s ease;
+		
+		&:hover {
+			background: rgba(var(--hrnet-primary-rgb), 0.1);
+			color: var(--hrnet-primary);
+		}
+		
+		&.active {
+			background: var(--hrnet-primary);
+			color: white;
+			
+			&:hover {
+				background: var(--hrnet-primary-dark);
+			}
+		}
+		
+		&.disabled {
+			opacity: 0.5;
+			pointer-events: none;
+		}
+		
+		i {
+			width: 20px;
+			text-align: center;
+		}
+	}
+}
+
+// Page content avec sidebar
+.page-content {
+	margin-left: var(--sidebar-width);
+	min-height: calc(100vh - var(--topbar-height));
+	display: flex;
+	flex-direction: column;
+	transition: margin-left 0.3s ease;
+	
+	.container-fluid {
+		flex: 1;
+		padding: 2rem;
+	}
+}
+
+// Navigation horizontale
+.horizontal-nav {
+	position: fixed;
+	top: var(--topbar-height);
+	left: 0;
+	right: 0;
+	height: var(--horizontal-nav-height);
+	z-index: 1025;
+	
+	.nav-link {
+		border-radius: 8px;
+		transition: all 0.2s ease;
+		
+		&:hover {
+			background: rgba(var(--hrnet-primary-rgb), 0.1);
+			color: var(--hrnet-primary);
+		}
+		
+		&.active {
+			background: var(--hrnet-primary);
+			color: white;
+		}
+		
+		&.disabled {
+			opacity: 0.5;
+			pointer-events: none;
+		}
+	}
+}
+
+// Page container pour layout horizontal
+.page-container {
+	padding: 2rem;
+	min-height: calc(100vh - var(--topbar-height) - var(--horizontal-nav-height) - var(--footer-height));
+	
+	// Interface épurée
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin: 1rem;
+  padding: 2rem;
+}
+
+// Titre de page
+.page-title {
+  color: var(--bs-primary);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+// Navigation breadcrumb épurée
+.breadcrumb {
+  background: transparent;
+  padding: 0;
+  margin-bottom: 1rem;
+  
+  .breadcrumb-item {
+    a {
+      color: var(--bs-primary);
+      text-decoration: none;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    
+    &.active {
+      color: var(--bs-gray-600);
+    }
+  }
+}
+
+// Cards épurées
+.card {
+  border: 1px solid var(--bs-border-color);
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  
+  .card-header {
+    background: var(--bs-gray-50);
+    border-bottom: 1px solid var(--bs-border-color);
+    font-weight: 600;
+  }
+}
+
+// Boutons améliorés
+.btn {
+  border-radius: 8px;
+  font-weight: 500;
+  
+  &.btn-primary {
+    background: var(--bs-primary);
+    border-color: var(--bs-primary);
+  }
+}
+
+// Responsive design
+@media (max-width: 992px) {
+	:root {
+		--sidebar-width: 0px;
+		--sidebar-compact-width: 0px;
+	}
+	
+	.sidebar {
+		transform: translateX(-100%);
+		
+		&.show {
+			transform: translateX(0);
+		}
+	}
+	
+	.page-content {
+		margin-left: 0;
+	}
+	
+	.horizontal-nav {
+		.nav {
+			overflow-x: auto;
+			flex-wrap: nowrap;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.topbar {
+		.navbar-brand span {
+			display: none;
+		}
+	}
+	
+	.page-content .container-fluid,
+	.page-container {
+		padding: 1rem;
+	}
+	
+	.horizontal-nav {
+		.nav-link {
+			font-size: 0.875rem;
+			padding: 0.5rem 0.75rem;
+		}
+	}
+}
+
+// Animations
+@keyframes slideInFromLeft {
+	from {
+		transform: translateX(-100%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+.sidebar.show {
+	animation: slideInFromLeft 0.3s ease-out;
+}
+
+// Dark mode support (pour plus tard)
+@media (prefers-color-scheme: dark) {
+	.topbar {
+		background: var(--bs-dark);
+		border-bottom-color: rgba(255, 255, 255, 0.125);
+	}
+	
+	.sidebar {
+		background: var(--bs-dark);
+		border-right-color: rgba(255, 255, 255, 0.125);
+	}
+	
+	.horizontal-nav {
+		background: var(--bs-dark);
+		border-bottom-color: rgba(255, 255, 255, 0.125);
+	}
+}

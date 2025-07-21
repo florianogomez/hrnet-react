@@ -1,0 +1,57 @@
+//
+// variables-custom.scss
+//
+
+$logo-lg-height: var(--#{$prefix}logo-lg-height);
+$logo-sm-height: var(--#{$prefix}logo-sm-height);
+
+// Left Sidebar
+$sidenav-width: var(--#{$prefix}sidenav-width);
+$sidenav-width-md: var(--#{$prefix}sidenav-width-md);
+$sidenav-width-sm: var(--#{$prefix}sidenav-width-sm);
+
+$menu-item-icon-size: var(--#{$prefix}menu-item-icon-size);
+$menu-item-font-size: var(--#{$prefix}menu-item-font-size);
+$menu-link-item-gap: var(--#{$prefix}menu-link-item-gap);
+$menu-item-padding-x: var(--#{$prefix}menu-item-padding-x);
+$menu-item-padding-y: var(--#{$prefix}menu-item-padding-y);
+
+// Menu
+$menu-bg: var(--#{$prefix}menu-bg);
+$menu-item-color: var(--#{$prefix}menu-item-color);
+$menu-item-hover-color: var(--#{$prefix}menu-item-hover-color);
+$menu-item-hover-bg: var(--#{$prefix}menu-item-hover-bg);
+$menu-item-active-color: var(--#{$prefix}menu-item-active-color);
+$menu-item-active-bg: var(--#{$prefix}menu-item-active-bg);
+
+// Topbar
+$topbar-height: var(--#{$prefix}topbar-height);
+$topbar-bg: var(--#{$prefix}topbar-bg);
+$topbar-item-color: var(--#{$prefix}topbar-item-color);
+$topbar-item-hover-color: var(--#{$prefix}topbar-item-hover-color);
+$topbar-search-bg: var(--#{$prefix}topbar-search-bg);
+$topbar-user-bg: var(--#{$prefix}topbar-user-bg);
+$topbar-user-border: var(--#{$prefix}topbar-user-border);
+
+/* HRNet Theme Variables */
+
+// HRNet Brand Colors - Palette orientée RH
+:root {
+  // Couleurs principales HRNet
+  --hrnet-primary: #2563eb;        // Bleu professionnel
+  --hrnet-secondary: #64748b;      // Gris ardoise
+  --hrnet-success: #059669;        // Vert succès
+  --hrnet-info: #0891b2;          // Cyan info
+  --hrnet-warning: #d97706;       // Orange warning
+  --hrnet-danger: #dc2626;        // Rouge danger
+  
+  // Couleurs RH spécifiques
+  --hrnet-employee-bg: #f1f5f9;   // Fond employé
+  --hrnet-department-bg: #ecfdf5; // Fond département
+  --hrnet-form-bg: #fefefe;       // Fond formulaires
+  
+  // Couleurs texte
+  --hrnet-text-dark: #1e293b;     // Texte principal
+  --hrnet-text-muted: #64748b;    // Texte secondaire
+  --hrnet-text-light: #94a3b8;    // Texte discret
+}

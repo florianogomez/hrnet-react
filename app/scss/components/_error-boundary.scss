@@ -1,0 +1,189 @@
+/**
+ * Error Boundary Component Styles
+ * Provides styled error display with HRNet branding
+ */
+
+.error-boundary {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(135deg, var(--hrnet-primary) 0%, var(--hrnet-secondary) 100%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 9999;
+	
+	&__container {
+		background: white;
+		border-radius: 1rem;
+		box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+		max-width: 600px;
+		width: 90%;
+		max-height: 90vh;
+		overflow-y: auto;
+		padding: 2rem;
+		margin: 1rem;
+		
+		@media (max-width: 768px) {
+			padding: 1.5rem;
+			margin: 0.5rem;
+		}
+	}
+	
+	&__content {
+		text-align: center;
+	}
+	
+	&__icon {
+		font-size: 4rem;
+		color: var(--bs-warning);
+		margin-bottom: 1.5rem;
+		
+		@media (max-width: 768px) {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+	}
+	
+	&__title {
+		font-size: 2rem;
+		font-weight: 700;
+		color: var(--hrnet-primary);
+		margin-bottom: 1rem;
+		
+		@media (max-width: 768px) {
+			font-size: 1.5rem;
+		}
+	}
+	
+	&__details {
+		font-size: 1.1rem;
+		color: var(--bs-gray-600);
+		margin-bottom: 2rem;
+		line-height: 1.6;
+		
+		@media (max-width: 768px) {
+			font-size: 1rem;
+			margin-bottom: 1.5rem;
+		}
+	}
+	
+	&__stack {
+		margin: 2rem 0;
+		text-align: left;
+		background: var(--bs-gray-50);
+		border-radius: 0.5rem;
+		border: 1px solid var(--bs-gray-200);
+	}
+	
+	&__stack-toggle {
+		padding: 1rem;
+		cursor: pointer;
+		font-weight: 600;
+		color: var(--hrnet-primary);
+		border: none;
+		background: none;
+		width: 100%;
+		text-align: left;
+		
+		&:hover {
+			background: var(--bs-gray-100);
+		}
+		
+		&::marker {
+			color: var(--hrnet-primary);
+		}
+	}
+	
+	&__stack-trace {
+		padding: 1rem;
+		margin: 0;
+		background: var(--bs-gray-900);
+		color: var(--bs-gray-100);
+		border-radius: 0 0 0.5rem 0.5rem;
+		overflow-x: auto;
+		font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+		font-size: 0.875rem;
+		line-height: 1.5;
+		white-space: pre-wrap;
+		word-break: break-word;
+		
+		code {
+			color: inherit;
+			background: none;
+			padding: 0;
+			font-size: inherit;
+		}
+	}
+	
+	&__actions {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+		
+		@media (max-width: 480px) {
+			flex-direction: column;
+			gap: 0.75rem;
+		}
+		
+		.btn {
+			display: inline-flex;
+			align-items: center;
+			padding: 0.75rem 1.5rem;
+			font-weight: 600;
+			border-radius: 0.5rem;
+			text-decoration: none;
+			transition: all 0.2s ease;
+			
+			&:hover {
+				transform: translateY(-1px);
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			}
+			
+			i {
+				font-size: 1rem;
+			}
+		}
+		
+		.btn-primary {
+			background: var(--hrnet-primary);
+			border-color: var(--hrnet-primary);
+			color: white;
+			
+			&:hover {
+				background: var(--hrnet-primary-dark);
+				border-color: var(--hrnet-primary-dark);
+			}
+		}
+		
+		.btn-outline-secondary {
+			border-color: var(--bs-gray-400);
+			color: var(--bs-gray-600);
+			
+			&:hover {
+				background: var(--bs-gray-100);
+				border-color: var(--bs-gray-500);
+				color: var(--bs-gray-700);
+			}
+		}
+	}
+}
+
+// Animation pour l'apparition de l'error boundary
+@keyframes errorBoundaryFadeIn {
+	from {
+		opacity: 0;
+		transform: scale(0.95);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+.error-boundary__container {
+	animation: errorBoundaryFadeIn 0.3s ease-out;
+}

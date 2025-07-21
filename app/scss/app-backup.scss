@@ -1,0 +1,77 @@
+/*
+HRNet - Application de gestion des employés
+Version: 1.0.0
+Author: HRNet Team
+File: App Css File - Optimisé pour la gestion RH
+*/
+
+// Plugins essentiels pour HRNet
+@import 'choices.js/public/assets/styles/choices.min.css';
+@import 'flatpickr/dist/flatpickr.min.css';
+
+// Core files
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+
+@import 'variables';
+@import 'variables-dark';
+@import 'variables-custom';
+@import 'theme-default';
+
+@import 'bootstrap/scss/bootstrap';
+
+// Structure
+@import 'structure/topbar';
+@import 'structure/sidenav';
+@import 'structure/horizontal';
+@import 'structure/layout';
+@import 'structure/footer';
+@import 'structure/customizer';
+
+// Components
+@import 'components/utilities';
+@import 'components/background';
+@import 'components/accordions';
+@import 'components/alert';
+@import 'components/avatar';
+@import 'components/breadcrumb';
+@import 'components/buttons';
+@import 'components/badge';
+@import 'components/card';
+@import 'components/dropdown';
+@import 'components/forms';
+@import 'components/modal';
+@import 'components/nav';
+@import 'components/pagination';
+@import 'components/popover';
+@import 'components/print';
+@import 'components/progress';
+@import 'components/reboot';
+@import 'components/ribbons';
+@import 'components/switch';
+@import 'components/tables';
+@import 'components/tooltip';
+@import 'components/steps';
+@import 'components/preloader';
+@import 'components/widgets';
+@import 'components/top-preloader';
+@import 'components/employees'; // HRNet specific
+@import 'components/error-boundary';
+
+// Pages HRNet spécifiques
+@import 'pages/error';
+@import 'pages/components-demo';
+@import 'pages/home'; // HRNet home page
+
+// Plugins HRNet essentiels
+@import 'plugins/choice';
+@import 'plugins/flatpickr';
+@import 'plugins/form-wizard';
+@import 'plugins/simplebar';
+@import 'custom-react';
+
+@import 'custom';
+
+// Layouts enterprise
+@import 'layouts/layouts';
+

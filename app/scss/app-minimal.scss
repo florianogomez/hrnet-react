@@ -1,0 +1,55 @@
+/*
+HRNet - Application de gestion des employés
+Version: 1.0.0 - Ultra-simplifié
+Author: HRNet Team
+File: App Css File - Optimisé et minimaliste pour HRNet
+*/
+
+// Plugins essentiels pour HRNet uniquement
+@import 'choices.js/public/assets/styles/choices.min.css';
+@import 'flatpickr/dist/flatpickr.min.css';
+
+// Core Bootstrap
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+
+// Variables personnalisées minimales
+@import 'variables';
+@import 'variables-dark';
+@import 'variables-custom';
+@import 'theme-default';
+
+// Bootstrap complet
+@import 'bootstrap/scss/bootstrap';
+
+// Structure essentielle uniquement
+@import 'structure/horizontal';  // Layout horizontal seulement
+@import 'structure/layout';      // Layout principal
+@import 'structure/footer';      // Footer
+
+// Composants utilisés dans HRNet seulement
+@import 'components/utilities';   // Utilitaires Bootstrap
+@import 'components/alert';       // Alertes (utilisé dans Alert.tsx)
+@import 'components/buttons';     // Boutons (utilisé partout)
+@import 'components/card';        // Cards (utilisé dans les vues)
+@import 'components/forms';       // Formulaires (EmployeeForm)
+@import 'components/modal';       // Modales (AppConfirmationModal)
+@import 'components/nav';         // Navigation (HorizontalNavigation)
+@import 'components/tables';      // Tables (EmployeeTable)
+@import 'components/breadcrumb';  // Breadcrumbs (PageTitle)
+@import 'components/preloader';   // Loaders (Loader, FullscreenLoader)
+@import 'components/employees';   // Styles spécifiques HRNet
+
+// Pages HRNet uniquement
+@import 'pages/home';            // Page d'accueil HRNet
+
+// Plugins utilisés dans HRNet
+@import 'plugins/choice';        // Select améliorés
+@import 'plugins/flatpickr';     // Date picker
+
+// Customisations React
+@import 'custom-react';
+@import 'custom';
+
+// Layout horizontal uniquement
+@import 'layouts/layouts';
