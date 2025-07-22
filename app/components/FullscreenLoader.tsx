@@ -19,7 +19,7 @@ export function FullscreenLoader() {
 		  <Loader size={60} className="fullscreen-loader__spinner" />
 		  <div className="fullscreen-loader__text">
 			<h2 className="fullscreen-loader__title">HRNet</h2>
-			<p className="fullscreen-loader__subtitle">Chargement en cours...</p>
+			<p className="fullscreen-loader__subtitle">Loading...</p>
 		  </div>
 		</div>
 	  </div>

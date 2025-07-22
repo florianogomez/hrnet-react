@@ -4,13 +4,13 @@ import { MemoryRouter } from "react-router";
 import Layout from "../../pages/_layout";
 
 describe("Layout", () => {
-  it("rend le layout principal", () => {
+  it("renders the main layout", () => {
 	render(
 	  <MemoryRouter>
 		<Layout />
 	  </MemoryRouter>
 	);
-	// Ajoute ici des assertions spécifiques à la structure du layout
+	// Add here specific assertions for the layout structure
 	expect(screen.getByRole("main")).toBeInTheDocument();
   });
 });

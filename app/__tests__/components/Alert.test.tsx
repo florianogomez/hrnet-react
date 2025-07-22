@@ -4,37 +4,38 @@ import Alert from '../../components/Alert';
 import { AlertVariantEnum } from '../../enums/AlertVariantEnum';
 
 describe('Alert', () => {
-  it('affiche le contenu enfant', () => {
-    render(<Alert>Message d'alerte</Alert>);
-    // Utilise une regexp pour matcher le texte même s'il y a des espaces ou balises autour
-    expect(screen.getByText(/Message d'alerte/i)).toBeInTheDocument();
+
+  it('displays the child content', () => {
+    render(<Alert>Alert message</Alert>);
+    // Uses a regexp to match the text even if there are spaces or tags around
+    expect(screen.getByText(/Alert message/i)).toBeInTheDocument();
   });
 
-  it('utilise la variante par défaut PRIMARY', () => {
+  it('uses the default PRIMARY variant', () => {
     render(<Alert>Test</Alert>);
     const alertDiv = screen.getByText('Test').closest('div');
     expect(alertDiv).toHaveClass('alert-primary');
   });
 
-  it('utilise la variante passée en props', () => {
-    render(<Alert variant={AlertVariantEnum.SUCCESS}>Succès</Alert>);
-    const alertDiv = screen.getByText('Succès').closest('div');
+  it('uses the variant passed as props', () => {
+    render(<Alert variant={AlertVariantEnum.SUCCESS}>Success</Alert>);
+    const alertDiv = screen.getByText('Success').closest('div');
     expect(alertDiv).toHaveClass('alert-success');
   });
 
-  it('affiche le bouton de fermeture si dismissible', () => {
-    render(<Alert dismissible>Fermable</Alert>);
+  it('shows the close button if dismissible', () => {
+    render(<Alert dismissible>Closable</Alert>);
     expect(screen.getByRole('button', { name: /close/i })).toBeInTheDocument();
   });
 
-  it('n\'affiche pas le bouton de fermeture si non dismissible', () => {
-    render(<Alert>Non fermable</Alert>);
+  it('does not show the close button if not dismissible', () => {
+    render(<Alert>Not closable</Alert>);
     expect(screen.queryByRole('button', { name: /close/i })).toBeNull();
   });
 
-  it('appelle onDismiss lors du clic sur le bouton de fermeture', () => {
+  it('calls onDismiss when clicking the close button', () => {
     const onDismiss = jest.fn();
-    render(<Alert dismissible onDismiss={onDismiss}>Fermable</Alert>);
+    render(<Alert dismissible onDismiss={onDismiss}>Closable</Alert>);
     fireEvent.click(screen.getByRole('button', { name: /close/i }));
     expect(onDismiss).toHaveBeenCalled();
   });

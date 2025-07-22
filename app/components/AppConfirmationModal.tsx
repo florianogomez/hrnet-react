@@ -21,8 +21,8 @@ export const AppConfirmationModal: React.FC<AppConfirmationModalProps> = ({
   onCancel,
   title,
   content,
-  cancelLabel = "Annuler",
-  confirmLabel = "Confirmer",
+  cancelLabel = "Cancel",
+  confirmLabel = "Confirm",
   processing = false,
   confirmButtonColor = "primary",
   cancelButtonColor = "secondary",
@@ -92,7 +92,7 @@ export const AppConfirmationModal: React.FC<AppConfirmationModalProps> = ({
                 {processing ? (
                   <>
                     <Loader />
-                    <span className="ms-2">{confirmProcessingLabel || "Chargement..."}</span>
+                    <span className="ms-2">{confirmProcessingLabel || "Loading..."}</span>
                   </>
                 ) : (
                   confirmLabel

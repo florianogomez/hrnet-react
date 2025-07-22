@@ -42,8 +42,8 @@ describe('AppIndexedDBStorage', () => {
     storeKeys = [];
   });
 
-  it('set et get une valeur', async () => {
-    // Simule le put
+  it('set and get a value', async () => {
+    // Simulate put
     (AppIndexedDBStorage as any).getStore.mockResolvedValueOnce({
       put: (val: string, key: string) => {
         store[key] = val;
@@ -52,7 +52,7 @@ describe('AppIndexedDBStorage', () => {
         return req;
       },
     });
-    await AppIndexedDBStorage.set('clé', { foo: 42 });
+    await AppIndexedDBStorage.set('key', { foo: 42 });
     (AppIndexedDBStorage as any).getStore.mockResolvedValueOnce({
       get: (key: string) => {
         const req: any = { result: store[key] };
@@ -60,12 +60,12 @@ describe('AppIndexedDBStorage', () => {
         return req;
       },
     });
-    const val = await AppIndexedDBStorage.get('clé');
+    const val = await AppIndexedDBStorage.get('key');
     expect(val).toEqual({ foo: 42 });
   });
 
-  it('remove supprime la clé', async () => {
-    store['clé'] = JSON.stringify('valeur');
+  it('remove deletes the key', async () => {
+    store['key'] = JSON.stringify('value');
     (AppIndexedDBStorage as any).getStore.mockResolvedValueOnce({
       delete: (key: string) => {
         delete store[key];
@@ -74,12 +74,12 @@ describe('AppIndexedDBStorage', () => {
         return req;
       },
     });
-    await AppIndexedDBStorage.remove('clé');
-    expect(store['clé']).toBeUndefined();
+    await AppIndexedDBStorage.remove('key');
+    expect(store['key']).toBeUndefined();
   });
 
-  it('has détecte la présence de la clé', async () => {
-    store['clé'] = JSON.stringify('valeur');
+  it('has detects the presence of the key', async () => {
+    store['key'] = JSON.stringify('value');
     (AppIndexedDBStorage as any).getStore.mockResolvedValueOnce({
       getKey: (key: string) => {
         const req: any = { result: store[key] !== undefined ? key : undefined };
@@ -87,11 +87,11 @@ describe('AppIndexedDBStorage', () => {
         return req;
       },
     });
-    const exists = await AppIndexedDBStorage.has('clé');
+    const exists = await AppIndexedDBStorage.has('key');
     expect(exists).toBe(true);
   });
 
-  it('clear supprime tout', async () => {
+  it('clear removes everything', async () => {
     store['a'] = '1';
     store['b'] = '2';
     (AppIndexedDBStorage as any).getStore.mockResolvedValueOnce({

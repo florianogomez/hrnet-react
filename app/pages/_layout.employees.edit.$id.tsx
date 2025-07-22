@@ -19,12 +19,12 @@ const EditEmployeePage = () => {
 
   return (
 	<>
-	  <PageTitle
-		title="Éditer un employé"
-		subTitle="Employés"
-		subTitleRoute={appRoutes.employees.list}
-	  />
-	  <Suspense fallback={<div>Chargement…</div>}>
+	<PageTitle
+	  title="Edit employee"
+	  subTitle="Employees"
+	  subTitleRoute={appRoutes.employees.list}
+	/>
+	<Suspense fallback={<div>Loading…</div>}>
 		<EmployeesEditView />
 	  </Suspense>
 	</>

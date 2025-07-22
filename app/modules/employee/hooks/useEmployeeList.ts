@@ -1,4 +1,4 @@
-// Pour générer des employés mockés
+// For generating mock employees
 // Installer faker si besoin : npm install @faker-js/faker
 import { faker } from '@faker-js/faker';
 
@@ -34,9 +34,9 @@ export const useEmployeeList = () => {
 	const { employees, processing: loading, error } = useAppSelector((state) => state.employee);
 
 	/**
-	 * Génère et ajoute 173 employés mockés pour les tests de performance.
-	 * Peut être activé/désactivé via le paramètre enable.
-	 * @param enable - Active ou non la génération de mock (par défaut false)
+ * Generates and adds 173 mock employees for performance testing.
+ * Can be enabled/disabled via the enable parameter.
+ * @param enable - Whether to enable mock generation (default false)
 	 */
 	const generateMockEmployees = useCallback(
 		async () => {
@@ -58,7 +58,7 @@ export const useEmployeeList = () => {
 				} as EmployeeCreateApiPayloadInterface;
 				await createEmployeeAction(fakeEmployee);
 			}
-			logger.info("173 employés mockés générés");
+	  logger.info("173 mock employees generated");
 		},
 		[createEmployeeAction]
 	);
@@ -71,7 +71,7 @@ export const useEmployeeList = () => {
 		try {
 			dispatch(setEmployeesLoading(true));
 			dispatch(setEmployeeError(null));
-      // await generateMockEmployees();
+	  // await generateMockEmployees();
 			const result = await getEmployeesAction();
 			if (result) {
 				// Convert models to interfaces for Redux

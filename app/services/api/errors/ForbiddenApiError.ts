@@ -19,6 +19,6 @@ export default class ForbiddenApiError extends ApiError {
    * @param params.data - Additional data associated with the error.
    */
   constructor({ message, data }: ApiErrorDataInterface) {
-    super(403, 'Accès interdit', message, data)
+    super(403, 'Forbidden access', message, data)
   }
 }

@@ -246,29 +246,29 @@ export default function EmployeesEditView() {
               }}
               onSubmit={submit}
               onChange={handleFormChange}
-              submitLabel="Mettre à jour"
+              submitLabel="Update"
               processing={loading}
               isEditing={true}
               employeeId={employeeId}
               onCancel={handleCancel}
             />
 
-            {/* Modale de succès */}
+            {/* Success modal */}
             <AppConfirmationModal
-              title="Employé mis à jour avec succès !"
+              title="Employee updated successfully!"
               content={
                 <div className="text-center">
                   <div className="mb-3">
                     <i className="bi bi-check-circle text-success" style={{ fontSize: '3rem' }}></i>
                   </div>
                   <p className="mb-0">
-                    L'employé <strong>{successModal.employeeName}</strong> a été mis à jour avec succès dans le système.
+                    The employee <strong>{successModal.employeeName}</strong> has been successfully updated in the system.
                   </p>
                 </div>
               }
               isOpen={successModal.isOpen}
-              confirmLabel="Aller à la liste"
-              cancelLabel="Continuer l'édition"
+              confirmLabel="Go to the list"
+              cancelLabel="Continue editing"
               processing={false}
               confirmButtonColor="success"
               cancelButtonColor="primary"

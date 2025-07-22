@@ -5,12 +5,12 @@ import HorizontalNavigation from '~/components/layout/HorizontalNavigation';
 
 describe('HorizontalNavigation', () => {
   const menuItems = [
-    { id: 'home', label: 'Accueil', path: '/', icon: 'bi bi-house' },
-    { id: 'employees', label: 'Employés', path: '/employees', icon: 'bi bi-people' },
-    { id: 'settings', label: 'Paramètres', path: '/settings' },
+    { id: 'home', label: 'Home', path: '/', icon: 'bi bi-house' },
+    { id: 'employees', label: 'Employees', path: '/employees', icon: 'bi bi-people' },
+    { id: 'settings', label: 'Settings', path: '/settings' },
   ];
 
-  it('affiche le logo HRNet', () => {
+  it('displays the HRNet logo', () => {
     render(
       <MemoryRouter>
         <HorizontalNavigation menuItems={menuItems} />
@@ -19,7 +19,7 @@ describe('HorizontalNavigation', () => {
     expect(screen.getByText('HRNet')).toBeInTheDocument();
   });
 
-  it('affiche tous les éléments du menu', () => {
+  it('displays all menu items', () => {
     render(
       <MemoryRouter>
         <HorizontalNavigation menuItems={menuItems} />
@@ -30,7 +30,7 @@ describe('HorizontalNavigation', () => {
     });
   });
 
-  it('affiche les icônes si présentes', () => {
+  it('displays icons if present', () => {
     render(
       <MemoryRouter>
         <HorizontalNavigation menuItems={menuItems} />
@@ -40,13 +40,13 @@ describe('HorizontalNavigation', () => {
     expect(document.querySelector('.bi.bi-people')).toBeInTheDocument();
   });
 
-  it('met en surbrillance le lien actif', () => {
+  it('highlights the active link', () => {
     render(
       <MemoryRouter initialEntries={['/employees']}>
         <HorizontalNavigation menuItems={menuItems} />
       </MemoryRouter>
     );
-    const activeLink = screen.getByText('Employés');
+    const activeLink = screen.getByText('Employees');
     expect(activeLink).toHaveClass('bg-primary');
     expect(activeLink).toHaveClass('text-white');
   });

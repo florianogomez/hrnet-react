@@ -29,7 +29,7 @@ export default class AppIndexedDBStorage {
 	private static openDB(): Promise<IDBDatabase> {
 		return new Promise((resolve, reject) => {
 			if (!AppIndexedDBStorage.isClient()) {
-				reject(new Error('IndexedDB n\'est pas disponible côté serveur'));
+		reject(new Error('IndexedDB is not available on the server side'));
 				return;
 			}
 
@@ -49,7 +49,7 @@ export default class AppIndexedDBStorage {
 
 	private static async getStore(mode: IDBTransactionMode): Promise<IDBObjectStore> {
 		if (!AppIndexedDBStorage.isClient()) {
-			throw new Error('IndexedDB n\'est pas disponible côté serveur');
+		throw new Error('IndexedDB is not available on the server side');
 		}
 		
 		const db = await AppIndexedDBStorage.getDbPromise();
@@ -59,7 +59,7 @@ export default class AppIndexedDBStorage {
 
 	static async set<T>(key: string, value: T): Promise<void> {
 		if (!AppIndexedDBStorage.isClient()) {
-			logger.warn(`Tentative de stockage côté serveur pour la clé "${key}"`);
+		logger.warn(`Attempted to store on the server side for key "${key}"`);
 			return;
 		}
 
@@ -81,7 +81,7 @@ export default class AppIndexedDBStorage {
 
 	static async get<T>(key: string): Promise<T | null> {
 		if (!AppIndexedDBStorage.isClient()) {
-			logger.warn(`Tentative de lecture côté serveur pour la clé "${key}"`);
+		logger.warn(`Attempted to read on the server side for key "${key}"`);
 			return null;
 		}
 
@@ -108,7 +108,7 @@ export default class AppIndexedDBStorage {
 
 	static async remove(key: string): Promise<void> {
 		if (!AppIndexedDBStorage.isClient()) {
-			logger.warn(`Tentative de suppression côté serveur pour la clé "${key}"`);
+		logger.warn(`Attempted to delete on the server side for key "${key}"`);
 			return;
 		}
 
@@ -127,7 +127,7 @@ export default class AppIndexedDBStorage {
 
 	static async has(key: string): Promise<boolean> {
 		if (!AppIndexedDBStorage.isClient()) {
-			logger.warn(`Tentative de vérification côté serveur pour la clé "${key}"`);
+		logger.warn(`Attempted to check on the server side for key "${key}"`);
 			return false;
 		}
 
@@ -147,7 +147,7 @@ export default class AppIndexedDBStorage {
 
 	static async clear(): Promise<void> {
 		if (!AppIndexedDBStorage.isClient()) {
-			logger.warn(`Tentative de nettoyage côté serveur`);
+		logger.warn(`Attempted to clean up on the server side`);
 			return;
 		}
 

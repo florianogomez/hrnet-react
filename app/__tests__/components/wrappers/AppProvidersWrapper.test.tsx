@@ -3,23 +3,23 @@ import AppProvidersWrapper from '~/components/wrappers/AppProvidersWrapper';
 
 describe('AppProvidersWrapper', () => {
   beforeEach(() => {
-    // Nettoyage du DOM et du localStorage avant chaque test
+    // Clean up DOM and localStorage before each test
     document.documentElement.lang = '';
     document.documentElement.removeAttribute('data-theme');
     localStorage.clear();
     delete (window as any).__HRNET_VERSION__;
   });
 
-  it('render les enfants', () => {
+  it('renders children', () => {
     const { getByText } = render(
       <AppProvidersWrapper>
-        <div>Contenu enfant</div>
+        <div>Child content</div>
       </AppProvidersWrapper>
     );
-    expect(getByText('Contenu enfant')).toBeInTheDocument();
+    expect(getByText('Child content')).toBeInTheDocument();
   });
 
-  it('initialise la langue du document à fr', () => {
+  it('initializes the document language to fr', () => {
     render(
       <AppProvidersWrapper>
         <div />
@@ -28,7 +28,7 @@ describe('AppProvidersWrapper', () => {
     expect(document.documentElement.lang).toBe('fr');
   });
 
-  it('applique le thème sauvegardé dans le localStorage', () => {
+  it('applies the theme saved in localStorage', () => {
     localStorage.setItem('hrnet-theme', 'dark');
     render(
       <AppProvidersWrapper>
@@ -38,7 +38,7 @@ describe('AppProvidersWrapper', () => {
     expect(document.documentElement.getAttribute('data-theme')).toBe('dark');
   });
 
-  it('définit la version de l\'application sur window', () => {
+  it('sets the application version on window', () => {
     render(
       <AppProvidersWrapper>
         <div />

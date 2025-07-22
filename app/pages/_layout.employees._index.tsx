@@ -8,8 +8,8 @@ const EmployeesListView = lazy(() => import("~/modules/employee/views/EmployeesL
 const EmployeesPage = () => {
   return (
 	<>
-	  <PageTitle title="Gestion des employés" />
-	  <Suspense fallback={<div>Chargement…</div>}>
+	  <PageTitle title="Employee management" />
+	  <Suspense fallback={<div>Loading…</div>}>
 		<EmployeesListView />
 	  </Suspense>
 	</>

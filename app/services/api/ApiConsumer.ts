@@ -124,7 +124,7 @@ export class ApiConsumer {
 				});
 
 				return new InternalServerApiError({
-					message: "Erreur interne du serveur",
+			   message: "Internal server error",
 					status: 500,
 				});
 			}

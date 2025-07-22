@@ -1,7 +1,7 @@
 import * as clients from '../../../../services/api/clients/index';
 
 describe('api/clients/index', () => {
-  it('doit exporter des clients API', () => {
+  it('should export API clients', () => {
     expect(clients).toBeDefined();
     expect(typeof clients).toBe('object');
   });

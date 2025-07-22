@@ -7,7 +7,7 @@ import { store } from "~/store";
 import EmployeesAdd from "../../pages/_layout.employees.add";
 
 describe("EmployeesAdd", () => {
-	it("rend la page d'ajout d'employé", () => {
+  it("renders the add employee page", () => {
 		render(
 			<Provider store={store}>
 				<MemoryRouter>
@@ -15,7 +15,7 @@ describe("EmployeesAdd", () => {
 				</MemoryRouter>
 			</Provider>
 		);
-		// Vérifie que le heading principal contient le texte exact 'Ajouter un employé'
-		expect(screen.getByRole("heading", { name: /ajouter un employé/i })).toBeInTheDocument();
+	// Checks that the main heading contains the exact text 'Add employee'
+	expect(screen.getByRole("heading", { name: /add employee/i })).toBeInTheDocument();
 	});
 });

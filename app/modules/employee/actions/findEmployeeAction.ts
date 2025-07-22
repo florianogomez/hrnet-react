@@ -30,7 +30,7 @@ export const findEmployeeAction = async (
 
     if (result instanceof ApiError) {
       logger.error("Find employee API error:", result.message);
-      throw new Error(`Erreur lors de la recherche de l'employé: ${result.message}`);
+      throw new Error(`Error while searching for employee: ${result.message}`);
     }
 
     logger.info("Employee found:", result.fullName);

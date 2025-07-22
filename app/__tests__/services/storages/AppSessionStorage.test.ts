@@ -16,35 +16,35 @@ describe('AppSessionStorage', () => {
     window.sessionStorage.clear();
   });
 
-  it('set et get une valeur encryptée', async () => {
-    await AppSessionStorage.set('clé', { foo: 42 });
-    const val = await AppSessionStorage.get('clé');
+  it('set and get an encrypted value', async () => {
+    await AppSessionStorage.set('key', { foo: 42 });
+    const val = await AppSessionStorage.get('key');
     expect(val).toEqual({ foo: 42 });
-    const raw = window.sessionStorage.getItem('argent-bank-clé');
+    const raw = window.sessionStorage.getItem('argent-bank-key');
     expect(raw?.startsWith('__ENCRYPTED__:')).toBe(true);
   });
 
-  it('get retourne null si la clé n\'existe pas', async () => {
-    const val = await AppSessionStorage.get('inconnue');
+  it('get returns null if the key does not exist', async () => {
+    const val = await AppSessionStorage.get('unknown');
     expect(val).toBeNull();
   });
 
-  it('remove supprime la clé', async () => {
-    await AppSessionStorage.set('clé', 123);
+  it('remove deletes the key', async () => {
+    await AppSessionStorage.set('key', 123);
     await new Promise(r => setTimeout(r, 0));
-    AppSessionStorage.remove('clé');
+    AppSessionStorage.remove('key');
     await new Promise(r => setTimeout(r, 0));
-    expect(window.sessionStorage.getItem('argent-bank-clé')).toBeNull();
+    expect(window.sessionStorage.getItem('argent-bank-key')).toBeNull();
   });
 
-  it('has détecte la présence de la clé', async () => {
-    expect(AppSessionStorage.has('clé')).toBe(false);
-    await AppSessionStorage.set('clé', 'valeur');
+  it('has detects the presence of the key', async () => {
+    expect(AppSessionStorage.has('key')).toBe(false);
+    await AppSessionStorage.set('key', 'value');
     await new Promise(r => setTimeout(r, 0));
-    expect(window.sessionStorage.getItem('argent-bank-clé')).not.toBeNull();
+    expect(window.sessionStorage.getItem('argent-bank-key')).not.toBeNull();
   });
 
-  it('clear supprime toutes les clés de l\'app', async () => {
+  it('clear removes all app keys', async () => {
     await AppSessionStorage.set('a', 1);
     await AppSessionStorage.set('b', 2);
     AppSessionStorage.clear();
@@ -52,19 +52,19 @@ describe('AppSessionStorage', () => {
     expect(AppSessionStorage.has('b')).toBe(false);
   });
 
-  it('get retourne la valeur brute si non encryptée', async () => {
+  it('get returns the raw value if not encrypted', async () => {
     window.sessionStorage.setItem('argent-bank-test', JSON.stringify({ foo: 'bar' }));
     const val = await AppSessionStorage.get('test');
     expect(val).toEqual({ foo: 'bar' });
   });
 
-  it('setAuthToken et getAuthToken', async () => {
+  it('setAuthToken and getAuthToken', async () => {
     await AppSessionStorage.setAuthToken('tok');
     const val = await AppSessionStorage.getAuthToken();
     expect(val).toBe('tok');
   });
 
-  it('getAuthToken retourne le token après setAuthToken', async () => {
+  it('getAuthToken returns the token after setAuthToken', async () => {
     expect(await AppSessionStorage.getAuthToken()).toBeNull();
     await AppSessionStorage.setAuthToken('tok');
     await new Promise(r => setTimeout(r, 0));
@@ -72,13 +72,13 @@ describe('AppSessionStorage', () => {
     expect(token).toBe('tok');
   });
 
-  it('setUserData et getUserData', async () => {
+  it('setUserData and getUserData', async () => {
     await AppSessionStorage.setUserData({ name: 'bob' });
     const val = await AppSessionStorage.getUserData();
     expect(val).toEqual({ name: 'bob' });
   });
 
-  it('clearAuth supprime le token et les données utilisateur', async () => {
+  it('clearAuth removes the token and user data', async () => {
     await AppSessionStorage.setAuthToken('tok');
     await AppSessionStorage.setUserData({ name: 'bob' });
     await new Promise(r => setTimeout(r, 0));

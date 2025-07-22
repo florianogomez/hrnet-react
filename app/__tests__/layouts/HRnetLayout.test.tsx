@@ -4,14 +4,14 @@ import { MemoryRouter } from 'react-router';
 import HRnetLayout from '../../layouts/HRnetLayout';
 
 describe('HRnetLayout', () => {
-  it('affiche le layout principal HRNet', () => {
+  it('displays the main HRNet layout', () => {
     render(
       <MemoryRouter>
-        <HRnetLayout>Contenu HRNet</HRnetLayout>
+        <HRnetLayout>HRNet content</HRnetLayout>
       </MemoryRouter>
     );
-    expect(screen.getByText('Contenu HRNet')).toBeInTheDocument();
+    expect(screen.getByText('HRNet content')).toBeInTheDocument();
   });
 
-  // Ajoute ici d'autres tests spécifiques à la structure ou au comportement du layout si besoin
+  // Add here other tests specific to the structure or behavior of the layout if needed
 });

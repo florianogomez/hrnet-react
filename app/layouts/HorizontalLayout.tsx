@@ -15,18 +15,18 @@ const HorizontalLayout = ({ children }: ChildrenType) => {
 	/**
 	 * Menu items for the horizontal navigation bar.
 	 */
-	const menuItems = [
-		{ id: "home", label: "Accueil", path: "/", icon: "bi bi-house" },
-		{ id: "employees", label: "Employés", path: "/employees", icon: "bi bi-people" },
-		{ id: "add-employee", label: "Ajouter", path: "/employees/add", icon: "bi bi-person-plus" },
-	];
+const menuItems = [
+  { id: "home", label: "Home", path: "/", icon: "bi bi-house" },
+  { id: "employees", label: "Employees", path: "/employees", icon: "bi bi-people" },
+  { id: "add-employee", label: "Add", path: "/employees/add", icon: "bi bi-person-plus" },
+];
 
 	return (
 		<div className="wrapper horizontal-layout min-vh-100 d-flex flex-column">
-			{/* Navigation horizontale */}
+   {/* Horizontal navigation */}
 			<HorizontalNavigation menuItems={menuItems} />
 
-			{/* Contenu principal */}
+   {/* Main content */}
 			<main className="flex-grow-1 bg-light">
 				<div className="container-fluid py-4">
 					<Suspense fallback={<FullscreenLoader />}>{children}</Suspense>

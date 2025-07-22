@@ -10,8 +10,8 @@ const EmployeesAddView = lazy(() => import("~/modules/employee/views/EmployeesAd
 const EmployeesAddPage = () => {
   return (
     <>
-      <PageTitle title="Ajouter un employé" />
-      <Suspense fallback={<div>Chargement…</div>}>
+      <PageTitle title="Add employee" />
+      <Suspense fallback={<div>Loading…</div>}>
         <EmployeesAddView />
       </Suspense>
     </>

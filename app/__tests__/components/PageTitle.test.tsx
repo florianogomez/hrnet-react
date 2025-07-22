@@ -8,7 +8,7 @@ describe('PageTitle', () => {
     document.title = '';
     document.head.innerHTML = '';
     document.body.innerHTML = '';
-    // Ajout des balises meta nécessaires pour les tests SEO
+    // Add meta tags needed for SEO tests
     document.head.innerHTML = `
       <meta name="title" content="" />
       <meta name="description" content="" />
@@ -19,38 +19,38 @@ describe('PageTitle', () => {
     `;
   });
 
-  it('affiche le titre', () => {
+  it('displays the title', () => {
     render(
       <MemoryRouter>
-        <PageTitle title="Ma page" />
+        <PageTitle title="My page" />
       </MemoryRouter>
     );
-    // On cible le h4 principal (niveau 4)
-    const headings = screen.getAllByText('Ma page');
-    // Il doit y avoir au moins un h4 avec ce texte
+    // Target the main h4 (level 4)
+    const headings = screen.getAllByText('My page');
+    // There must be at least one h4 with this text
     expect(headings.some(el => el.tagName === 'H4')).toBe(true);
   });
 
-  it('affiche le sous-titre et le fil d\'Ariane', () => {
+  it('displays the subtitle and breadcrumb', () => {
     render(
       <MemoryRouter>
-        <PageTitle title="Ma page" subTitle="Sous-titre" subTitleRoute="/sous-titre" />
+        <PageTitle title="My page" subTitle="Subtitle" subTitleRoute="/subtitle" />
       </MemoryRouter>
     );
-    expect(screen.getByText('Sous-titre')).toBeInTheDocument();
+    expect(screen.getByText('Subtitle')).toBeInTheDocument();
     expect(screen.getAllByRole('link').length).toBeGreaterThan(1);
   });
 
-  it('met à jour le document.title', () => {
+  it('updates the document.title', () => {
     render(
       <MemoryRouter>
-        <PageTitle title="Titre SEO" />
+        <PageTitle title="SEO Title" />
       </MemoryRouter>
     );
-    expect(document.title).toBe('Titre SEO - HRNet');
+    expect(document.title).toBe('SEO Title - HRNet');
   });
 
-  it('met à jour les balises meta SEO', () => {
+  it('updates the SEO meta tags', () => {
     render(
       <MemoryRouter>
         <PageTitle title="SEO" description="Desc" />

@@ -8,7 +8,7 @@ import { store } from "~/store";
 import EmployeesIndex from "../../pages/_layout.employees._index";
 
 describe("EmployeesIndex", () => {
-	it("rend la page de liste des employés", () => {
+  it("renders the employee list page", () => {
 		render(
 			<Provider store={store}>
 				<MemoryRouter>
@@ -16,7 +16,7 @@ describe("EmployeesIndex", () => {
 				</MemoryRouter>
 			</Provider>
 		);
-		// Vérifie que le heading principal contient le texte attendu
-		expect(screen.getByRole("heading", { name: /employé|employés/i })).toBeInTheDocument();
+	// Checks that the main heading contains the expected text
+	expect(screen.getByRole("heading", { name: /employee|employees/i })).toBeInTheDocument();
 	});
 });

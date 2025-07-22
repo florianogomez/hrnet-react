@@ -2,8 +2,8 @@ import { AxiosError } from "axios";
 import GeneralApiError from "../../../../services/api/errors/GeneralApiError";
 
 describe("GeneralApiError", () => {
-	it("doit être une instance d'Error", () => {
-		// Création d'une instance AxiosError conforme à la signature
+  it("should be an instance of Error", () => {
+	// Create an AxiosError instance matching the signature
 		const axiosError = new AxiosError(
 			"GeneralApiError", // message
 			undefined, // code

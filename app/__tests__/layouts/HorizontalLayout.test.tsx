@@ -4,28 +4,28 @@ import { MemoryRouter } from 'react-router';
 import HorizontalLayout from '../../layouts/HorizontalLayout';
 
 describe('HorizontalLayout', () => {
-  it('affiche la navigation horizontale', () => {
+  it('displays the horizontal navigation', () => {
     render(
       <MemoryRouter>
-        <HorizontalLayout>Contenu principal</HorizontalLayout>
+        <HorizontalLayout>Main content</HorizontalLayout>
       </MemoryRouter>
     );
-    expect(screen.getByText('Accueil')).toBeInTheDocument();
-    expect(screen.getByText('Employés')).toBeInTheDocument();
-    expect(screen.getByText('Ajouter')).toBeInTheDocument();
+    expect(screen.getByText('Home')).toBeInTheDocument();
+    expect(screen.getByText('Employees')).toBeInTheDocument();
+    expect(screen.getByText('Add')).toBeInTheDocument();
   });
 
-  it('affiche le contenu enfant', () => {
+  it('displays the child content', () => {
     render(
       <MemoryRouter>
-        <HorizontalLayout><div>Contenu enfant</div></HorizontalLayout>
+        <HorizontalLayout><div>Child content</div></HorizontalLayout>
       </MemoryRouter>
     );
-    expect(screen.getByText('Contenu enfant')).toBeInTheDocument();
+    expect(screen.getByText('Child content')).toBeInTheDocument();
   });
 
-  it('utilise FullscreenLoader comme fallback du suspense', () => {
-    // On simule un composant enfant qui "suspends"
+  it('uses FullscreenLoader as the suspense fallback', () => {
+    // Simulate a child component that "suspends"
     const FallbackTest = () => { throw Promise.resolve(); };
     render(
       <MemoryRouter>

@@ -9,32 +9,31 @@ import PageTitle from "~/components/PageTitle";
 const HomePage = () => {
 	return (
 		<>
-			<PageTitle title="Accueil" description="Application de gestion des employés HRNet" />
+	  <PageTitle title="Home" description="HRNet employee management application" />
 			<div className="container-fluid">
 				<div className="row">
 					<div className="col-12">
 						<div className="card">
 							<div className="card-body">
 								<div className="text-center">
-									<h1 className="display-4 text-primary mb-4">
-										<i className="bi bi-people-fill me-3"></i>
-										Bienvenue sur HRNet
-									</h1>
+				  <h1 className="display-4 text-primary mb-4">
+					<i className="bi bi-people-fill me-3"></i>
+					Welcome to HRNet
+				  </h1>
 									<p className="lead mb-4">
-										Votre application de gestion des employés moderne et efficace
+					Your modern and efficient employee management application
 									</p>
 									<div className="row g-4 mt-4">
 										<div className="col-md-4">
 											<div className="card border-primary">
 												<div className="card-body text-center">
 													<i className="bi bi-person-plus display-1 text-primary mb-3"></i>
-													<h2 className="card-title h5">Ajouter des employés</h2>
+						<h2 className="card-title h5">Add employees</h2>
 													<p className="card-text">
-														Créez facilement de nouveaux profils d'employés avec toutes les
-														informations nécessaires.
+							Easily create new employee profiles with all the necessary information.
 													</p>
 													<Link to="/employees/add" className="btn btn-primary">
-														Ajouter un employé
+							Add employee
 													</Link>
 												</div>
 											</div>
@@ -43,12 +42,12 @@ const HomePage = () => {
 											<div className="card border-success">
 												<div className="card-body text-center">
 													<i className="bi bi-list-ul display-1 text-success mb-3"></i>
-													<h2 className="card-title h5">Gérer les employés</h2>
+						<h2 className="card-title h5">Manage employees</h2>
 													<p className="card-text">
-														Consultez, recherchez et modifiez les informations de vos employés.
+							View, search and edit your employees' information.
 													</p>
 													<Link to="/employees" className="btn btn-success">
-														Liste des employés
+							Employee list
 													</Link>
 												</div>
 											</div>

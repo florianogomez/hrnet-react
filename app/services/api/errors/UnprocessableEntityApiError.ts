@@ -1,5 +1,5 @@
 /**
- * Erreur pour les entités non traitables (HTTP 422)
+ * Error for unprocessable entities (HTTP 422)
  */
 import ApiError from './ApiError';
 

@@ -1,7 +1,7 @@
 import UnauthorizedApiError from "../../../../services/api/errors/UnauthorizedApiError";
 
 describe("UnauthorizedApiError", () => {
-  it("doit être une instance d'Error", () => {
+  it("should be an instance of Error", () => {
     const err = new UnauthorizedApiError({
       status: 401,
       message: "UnauthorizedApiError",

@@ -1,7 +1,7 @@
 import InternalServerApiError from "../../../../services/api/errors/InternalServerApiError";
 
 describe("InternalServerApiError", () => {
-  it("doit être une instance d'Error", () => {
+  it("should be an instance of Error", () => {
     const err = new InternalServerApiError({
       status: 500,
       message: "InternalServerApiError",

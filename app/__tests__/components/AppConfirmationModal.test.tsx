@@ -3,35 +3,35 @@ import {  screen, fireEvent } from '@testing-library/dom';
 import { AppConfirmationModal } from '~/components/AppConfirmationModal';
 
 describe('AppConfirmationModal', () => {
-  it('affiche le titre et le message', () => {
+  it('displays the title and message', () => {
     render(
-      <AppConfirmationModal isOpen={true} title="Titre" content="Message" onConfirm={jest.fn()} onCancel={jest.fn()} />
+      <AppConfirmationModal isOpen={true} title="Title" content="Message" onConfirm={jest.fn()} onCancel={jest.fn()} />
     );
-    expect(screen.getByText('Titre')).toBeInTheDocument();
+    expect(screen.getByText('Title')).toBeInTheDocument();
     expect(screen.getByText('Message')).toBeInTheDocument();
   });
 
-  it('appelle onConfirm lors du clic sur le bouton de confirmation', () => {
+  it('calls onConfirm when clicking the confirm button', () => {
     const onConfirm = jest.fn();
     render(
-      <AppConfirmationModal isOpen={true} title="Titre" content="Message" onConfirm={onConfirm} onCancel={jest.fn()} />
+      <AppConfirmationModal isOpen={true} title="Title" content="Message" onConfirm={onConfirm} onCancel={jest.fn()} />
     );
-    fireEvent.click(screen.getByRole('button', { name: /confirmer|oui|ok/i }));
+    fireEvent.click(screen.getByRole('button', { name: /confirm|yes|ok/i }));
     expect(onConfirm).toHaveBeenCalled();
   });
 
-  it('appelle onCancel lors du clic sur le bouton d\'annulation', () => {
+  it('calls onCancel when clicking the cancel button', () => {
     const onCancel = jest.fn();
     render(
-      <AppConfirmationModal isOpen={true} title="Titre" content="Message" onConfirm={jest.fn()} onCancel={onCancel} />
+      <AppConfirmationModal isOpen={true} title="Title" content="Message" onConfirm={jest.fn()} onCancel={onCancel} />
     );
-    fireEvent.click(screen.getByRole('button', { name: /annuler|non/i }));
+    fireEvent.click(screen.getByRole('button', { name: /cancel|no/i }));
     expect(onCancel).toHaveBeenCalled();
   });
 
-  it('n\'affiche rien si open est false', () => {
+  it('renders nothing if open is false', () => {
     const { container } = render(
-      <AppConfirmationModal title="Titre" content="Message" onConfirm={jest.fn()} onCancel={jest.fn()} />
+      <AppConfirmationModal title="Title" content="Message" onConfirm={jest.fn()} onCancel={jest.fn()} />
     );
     expect(container).toBeEmptyDOMElement();
   });

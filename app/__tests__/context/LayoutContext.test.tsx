@@ -13,7 +13,7 @@ function TestComponent() {
 }
 
 describe('LayoutContext', () => {
-  it('fournit la valeur initiale isMenuOpen à false', () => {
+  it('provides the initial value isMenuOpen as false', () => {
     render(
       <LayoutProvider>
         <TestComponent />
@@ -22,7 +22,7 @@ describe('LayoutContext', () => {
     expect(screen.getByTestId('menu-state').textContent).toBe('closed');
   });
 
-  it('toggleMenu inverse la valeur de isMenuOpen', () => {
+  it('toggleMenu toggles the value of isMenuOpen', () => {
     render(
       <LayoutProvider>
         <TestComponent />
@@ -35,8 +35,8 @@ describe('LayoutContext', () => {
     expect(screen.getByTestId('menu-state').textContent).toBe('closed');
   });
 
-  it('lance une erreur si useLayoutContext est utilisé hors provider', () => {
-    // Suppression du message d'erreur React attendu dans la console
+  it('throws an error if useLayoutContext is used outside the provider', () => {
+    // Suppress the expected React error message in the console
     const spy = jest.spyOn(console, 'error').mockImplementation(() => {});
     const Broken = () => {
       useLayoutContext();

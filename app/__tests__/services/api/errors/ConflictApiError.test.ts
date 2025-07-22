@@ -1,7 +1,7 @@
 import ConflictApiError from "../../../../services/api/errors/ConflictApiError";
 
 describe("ConflictApiError", () => {
-	it("doit être une instance d'Error", () => {
+  it("should be an instance of Error", () => {
 		const err = new ConflictApiError({
 			status: 409,
 			message: "ConflictApiError",

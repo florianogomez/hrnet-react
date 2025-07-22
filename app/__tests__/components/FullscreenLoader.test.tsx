@@ -3,7 +3,7 @@ import { screen } from '@testing-library/dom';
 import { FullscreenLoader } from '~/components/FullscreenLoader';
 
 describe('FullscreenLoader', () => {
-  it('affiche le loader en plein écran', () => {
+  it('displays the loader in fullscreen', () => {
     render(<FullscreenLoader />);
     expect(screen.getByTestId('fullscreen-loader')).toBeInTheDocument();
   });

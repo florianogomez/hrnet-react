@@ -77,7 +77,7 @@ export const EmployeeDataTable: React.FC<EmployeeDataTableProps> = ({
    */
   const columns = [
     {
-      title: 'Nom',
+      title: 'Name',
       data: null,
       render: (data: any, type: string, row: EmployeeInterface) => {
         if (type === 'display' || type === 'type') {
@@ -94,22 +94,22 @@ export const EmployeeDataTable: React.FC<EmployeeDataTableProps> = ({
       }
     },
     {
-      title: 'Date de naissance',
+      title: 'Date of birth',
       data: 'dateOfBirth',
       render: (data: string) => formatDate(data)
     },
     {
-      title: 'Département',
+      title: 'Department',
       data: 'department',
       render: (data: string) => `<span class="badge bg-primary">${data}</span>`
     },
     {
-      title: 'Date de début',
+      title: 'Start date',
       data: 'startDate',
       render: (data: string) => formatDate(data)
     },
     {
-      title: 'Adresse',
+      title: 'Address',
       data: null,
       render: (data: any, type: string, row: EmployeeInterface) => {
         if (type === 'display' || type === 'type') {
@@ -134,7 +134,7 @@ export const EmployeeDataTable: React.FC<EmployeeDataTableProps> = ({
           <button 
             class="btn btn-outline-primary btn-sm me-1 action-edit" 
             data-id="${row.id}"
-            title="Modifier"
+            title="Edit"
           >
             <i class="bi bi-pencil"></i>
           </button>
@@ -144,7 +144,7 @@ export const EmployeeDataTable: React.FC<EmployeeDataTableProps> = ({
           <button 
             class="btn btn-outline-danger btn-sm action-delete" 
             data-id="${row.id}"
-            title="Supprimer"
+            title="Delete"
           >
             <i class="bi bi-trash"></i>
           </button>
@@ -165,22 +165,22 @@ export const EmployeeDataTable: React.FC<EmployeeDataTableProps> = ({
     responsive: true,
     destroy: true, // Important: détruit et recrée le tableau à chaque changement
     language: {
-      decimal: ',',
-      thousands: ' ',
-      lengthMenu: 'Afficher _MENU_ entrées',
-      loadingRecords: 'Chargement...',
-      processing: 'Traitement...',
-      search: 'Rechercher:',
-      zeroRecords: 'Aucune donnée disponible dans le tableau',
+      decimal: '.',
+      thousands: ',',
+      lengthMenu: 'Show _MENU_ entries',
+      loadingRecords: 'Loading...',
+      processing: 'Processing...',
+      search: 'Search:',
+      zeroRecords: 'No data available in table',
       paginate: {
-        first: 'Premier',
-        last: 'Dernier',
-        next: 'Suivant',
-        previous: 'Précédent'
+        first: 'First',
+        last: 'Last',
+        next: 'Next',
+        previous: 'Previous'
       },
-      info: 'Affichage de _START_ à _END_ sur _TOTAL_ entrées',
-      infoEmpty: 'Affichage de 0 à 0 sur 0 entrée',
-      infoFiltered: '(filtré depuis _MAX_ entrées au total)'
+      info: 'Showing _START_ to _END_ of _TOTAL_ entries',
+      infoEmpty: 'Showing 0 to 0 of 0 entries',
+      infoFiltered: '(filtered from _MAX_ total entries)'
     },
     order: [[0, 'asc']] as any, // Tri par nom par défaut
     processing: loading,

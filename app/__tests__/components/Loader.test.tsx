@@ -3,7 +3,7 @@ import { screen } from '@testing-library/dom';
 import Loader from '../../components/Loader';
 
 describe('Loader', () => {
-  it('affiche le loader', () => {
+  it('displays the loader', () => {
     render(<Loader />);
     expect(screen.getByTestId('loader')).toBeInTheDocument();
   });

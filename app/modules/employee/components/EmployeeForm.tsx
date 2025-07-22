@@ -65,14 +65,14 @@ export interface EmployeeFormProps {
  * @returns {JSX.Element} The rendered employee form.
  */
 export const EmployeeForm: React.FC<EmployeeFormProps> = ({
-	initialValues = {},
-	onSubmit,
-	onChange,
-	submitLabel = "Enregistrer",
-	onCancel,
-	processing = false,
-	employeeId,
-	isEditing = false,
+   initialValues = {},
+   onSubmit,
+   onChange,
+   submitLabel = "Save",
+   onCancel,
+   processing = false,
+   employeeId,
+   isEditing = false,
 }) => {
 	/**
 	 * Default values for the form fields, merged with initial values.
@@ -168,34 +168,34 @@ export const EmployeeForm: React.FC<EmployeeFormProps> = ({
 		label: state.label,
 	}));
 
-	return (
-		<div className="card">
-			<div className="card-header">
-				<div className="row align-items-center">
-					<div className="col">
-						<h4 className="card-title mb-0">
-							{isEditing ? "Modifier l'employé" : "Nouvel employé"}
-						</h4>
-					</div>
-					<div className="col-auto">
-						<button
-							type="button"
-							className="btn btn-light"
-							onClick={handleCancel}
-							disabled={processing}
-						>
-							✕
-						</button>
-					</div>
-				</div>
+   return (
+	  <div className="card">
+		 <div className="card-header">
+			<div className="row align-items-center">
+			   <div className="col">
+				  <h4 className="card-title mb-0">
+					 {isEditing ? "Edit employee" : "New employee"}
+				  </h4>
+			   </div>
+			   <div className="col-auto">
+				  <button
+					 type="button"
+					 className="btn btn-light"
+					 onClick={handleCancel}
+					 disabled={processing}
+				  >
+					 ✕
+				  </button>
+			   </div>
 			</div>
-			<div className="card-body">
-				<form onSubmit={handleFormSubmit}>
-					<div className="row g-3">
-						{/* Personal Information */}
-						<div className="col-12">
-							<h5 className="text-muted">Personal Information</h5>
-						</div>
+		 </div>
+		 <div className="card-body">
+			<form onSubmit={handleFormSubmit}>
+			   <div className="row g-3">
+				  {/* Personal Information */}
+				  <div className="col-12">
+					 <h5 className="text-muted">Personal Information</h5>
+				  </div>
 
 						<div className="col-md-6">
 							<label htmlFor="firstName" className="form-label">
@@ -269,10 +269,10 @@ export const EmployeeForm: React.FC<EmployeeFormProps> = ({
 							</ClientOnly>
 						</div>
 
-						{/* Professional Information */}
-						<div className="col-12 mt-4">
-							<h5 className="text-muted">Professional Information</h5>
-						</div>
+				  {/* Professional Information */}
+				  <div className="col-12 mt-4">
+					 <h5 className="text-muted">Professional Information</h5>
+				  </div>
 
 						<div className="col-md-6">
 							<label htmlFor="department" className="form-label">
@@ -294,10 +294,10 @@ export const EmployeeForm: React.FC<EmployeeFormProps> = ({
 							</ClientOnly>
 						</div>
 
-						{/* Address */}
-						<div className="col-12 mt-4">
-							<h5 className="text-muted">Address</h5>
-						</div>
+				  {/* Address */}
+				  <div className="col-12 mt-4">
+					 <h5 className="text-muted">Address</h5>
+				  </div>
 
 						<div className="col-12">
 							<label htmlFor="street" className="form-label">

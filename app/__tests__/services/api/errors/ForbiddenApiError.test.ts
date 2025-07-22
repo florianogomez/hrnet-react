@@ -1,7 +1,7 @@
 import ForbiddenApiError from "../../../../services/api/errors/ForbiddenApiError";
 
 describe("ForbiddenApiError", () => {
-	it("doit être une instance d'Error", () => {
+  it("should be an instance of Error", () => {
 		const err = new ForbiddenApiError({
 			message: "ForbiddenApiError",
 		});

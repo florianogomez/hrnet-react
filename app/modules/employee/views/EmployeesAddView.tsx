@@ -139,26 +139,26 @@ export default function EmployeesAddView() {
               onChange={handleChange}
               processing={loading}
               isEditing={false}
-              submitLabel="Créer l'employé"
+              submitLabel="Create employee"
               onCancel={handleCancel}
             />
 
-            {/* Modale de succès */}
+            {/* Success modal */}
             <AppConfirmationModal
-              title="Employé créé avec succès !"
+              title="Employee created successfully!"
               content={
                 <div className="text-center">
                   <div className="mb-3">
                     <i className="bi bi-check-circle text-success" style={{ fontSize: '3rem' }}></i>
                   </div>
                   <p className="mb-0">
-                    L'employé <strong>{successModal.employeeName}</strong> a été créé avec succès dans le système.
+                    The employee <strong>{successModal.employeeName}</strong> has been successfully created in the system.
                   </p>
                 </div>
               }
               isOpen={successModal.isOpen}
-              confirmLabel="Aller à la liste"
-              cancelLabel="Ajouter un autre"
+              confirmLabel="Go to the list"
+              cancelLabel="Add another"
               processing={false}
               confirmButtonColor="success"
               cancelButtonColor="primary"
