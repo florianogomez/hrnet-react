@@ -26,6 +26,12 @@ export enum ApiHttpMethodEnum {
   PUT = "PUT",
 
   /**
+   * HTTP PATCH method used to partially update a resource on the server.
+   * Used for partial modifications of a resource.
+   */
+  PATCH = "PATCH",
+
+  /**
    * HTTP DELETE method used to remove a resource on the server.
    * Allows the deletion of an entity identified by a specific URI.
    */

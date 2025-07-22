@@ -97,7 +97,7 @@ export default class AppSessionStorage {
    */
   static remove(key: string): void {
     try {
-      window.sessionStorage.removeItem(key);
+      window.sessionStorage.removeItem(`${this.PREFIX}${key}`);
       logger.debug(`Key "${key}" removed from sessionStorage`);
     } catch (error) {
       logger.error(`Error removing key "${key}" from sessionStorage:`, error);

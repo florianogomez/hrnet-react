@@ -21,7 +21,7 @@ export default class NotFoundApiError extends ApiError {
    * @param errorData.message - Message describing the error.
    */
   constructor(route: string, { message, status }: ApiResponseInterface) {
-    super(404, 'Resource not found', message, status);
-    this.message = `The requested resource at URL [ ${route} ] was not found.`;
+    const finalMessage = message || `The requested resource at URL [ ${route} ] was not found.`;
+    super(404, 'Resource not found', finalMessage, status);
   }
 }

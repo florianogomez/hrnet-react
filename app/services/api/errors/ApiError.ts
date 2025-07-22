@@ -15,15 +15,13 @@ import type { AxiosError } from "axios";
  *
  * @category API Errors
  */
-export default abstract class ApiError {
+export default abstract class ApiError extends Error {
   /** HTTP status code associated with the error (e.g., 404, 500). */
   code: number;
 
   /** A short, human-readable summary of the error (e.g., 'Not Found', 'Validation Error'). */
   title: string;
 
-  /** A detailed message explaining the error. */
-  message: string;
 
   /** Additional data related to the error (e.g., context, validation errors). */
   data: any;
@@ -41,10 +39,13 @@ export default abstract class ApiError {
    * @param axiosError - Optional original Axios error.
    */
   constructor(code: number, title = "API Error", message = "", data = {}, axiosError?: AxiosError) {
+    super(message);
+    this.name = new.target.name;
     this.axiosError = axiosError;
     this.code = code;
     this.title = title;
-    this.message = message;
     this.data = data;
+    // Fix prototype chain for instanceof to work correctly
+    Object.setPrototypeOf(this, new.target.prototype);
   }
 }

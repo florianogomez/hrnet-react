@@ -9,6 +9,6 @@ import type { ConfirmModalState } from './modal.types';
 export function useConfirmModal(initialState: ConfirmModalState) {
   const [modal, setModal] = useState<ConfirmModalState>(initialState);
   const open = useCallback((state: Partial<ConfirmModalState>) => setModal({ ...initialState, ...state, isOpen: true }), [initialState]);
-  const close = useCallback(() => setModal(initialState), [initialState]);
+  const close = useCallback(() => setModal(prev => ({ ...prev, isOpen: false })), []);
   return { modal, open, close, setModal };
 }

@@ -39,7 +39,7 @@ export interface LoaderProps {
  */
 export default function Loader({ size = 20, className = '' }: LoaderProps) {
 	return (
-		<div className={`loader ${className}`} style={{ width: size, height: size }}>
+	   <div className={`loader ${className}`} data-testid="loader" style={{ width: size, height: size }}>
 			<div className="loader__container" style={{ width: size, height: size }}>
 				<div className="loader__circle" style={{ width: size, height: size }}></div>
 			</div>
