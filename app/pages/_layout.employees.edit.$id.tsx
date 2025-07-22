@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import PageTitle from "~/components/PageTitle";
-import EmployeesEditView from "~/modules/employee/views/EmployeesEditView";
+import { lazy, Suspense } from "react";
+const EmployeesEditView = lazy(() => import("~/modules/employee/views/EmployeesEditView"));
 import { appRoutes } from "~/appRoutes";
 
 /**
@@ -16,16 +17,18 @@ const EditEmployeePage = () => {
 		return null;
 	}
 
-	return (
-		<>
-			<PageTitle
-				title="Éditer un employé"
-				subTitle="Employés"
-				subTitleRoute={appRoutes.employees.list}
-			/>
-			<EmployeesEditView />
-		</>
-	);
+  return (
+	<>
+	  <PageTitle
+		title="Éditer un employé"
+		subTitle="Employés"
+		subTitleRoute={appRoutes.employees.list}
+	  />
+	  <Suspense fallback={<div>Chargement…</div>}>
+		<EmployeesEditView />
+	  </Suspense>
+	</>
+  );
 };
 
 export default EditEmployeePage;

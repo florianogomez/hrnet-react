@@ -1,5 +1,6 @@
 import PageTitle from "~/components/PageTitle";
-import { EmployeesAddView } from "~/modules/employee/views";
+import { lazy, Suspense } from "react";
+const EmployeesAddView = lazy(() => import("~/modules/employee/views/EmployeesAddView"));
 
 
 
@@ -10,7 +11,9 @@ const EmployeesAddPage = () => {
   return (
     <>
       <PageTitle title="Ajouter un employé" />
-      <EmployeesAddView />
+      <Suspense fallback={<div>Chargement…</div>}>
+        <EmployeesAddView />
+      </Suspense>
     </>
   );
 };

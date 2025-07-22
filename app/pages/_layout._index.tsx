@@ -28,7 +28,7 @@ const HomePage = () => {
 											<div className="card border-primary">
 												<div className="card-body text-center">
 													<i className="bi bi-person-plus display-1 text-primary mb-3"></i>
-													<h5 className="card-title">Ajouter des employés</h5>
+													<h2 className="card-title h5">Ajouter des employés</h2>
 													<p className="card-text">
 														Créez facilement de nouveaux profils d'employés avec toutes les
 														informations nécessaires.
@@ -43,7 +43,7 @@ const HomePage = () => {
 											<div className="card border-success">
 												<div className="card-body text-center">
 													<i className="bi bi-list-ul display-1 text-success mb-3"></i>
-													<h5 className="card-title">Gérer les employés</h5>
+													<h2 className="card-title h5">Gérer les employés</h2>
 													<p className="card-text">
 														Consultez, recherchez et modifiez les informations de vos employés.
 													</p>
