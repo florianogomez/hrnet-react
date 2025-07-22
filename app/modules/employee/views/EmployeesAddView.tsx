@@ -39,17 +39,17 @@ export default function EmployeesAddView() {
   /**
    * Initial form values for development, generated with Faker.js.
    */
-  const initialValues = useRef<Partial<EmployeeCreateApiPayloadInterface>>({
-    firstName: faker.person.firstName(),
-    lastName: faker.person.lastName(),
-    dateOfBirth: faker.date.birthdate({ min: 18, max: 65, mode: 'age' }).toISOString().split('T')[0],
-    startDate: faker.date.recent({ days: 30 }).toISOString().split('T')[0],
-    department: faker.helpers.arrayElement(["Sales", "Marketing", "Engineering", "Human Resources", "Legal"]),
-    street: faker.location.streetAddress(),
-    city: faker.location.city(),
-    state: faker.location.state({ abbreviated: true }),
-    zipCode: faker.location.zipCode(),
-  }).current;
+  // const initialValues = useRef<Partial<EmployeeCreateApiPayloadInterface>>({
+  //   firstName: faker.person.firstName(),
+  //   lastName: faker.person.lastName(),
+  //   dateOfBirth: faker.date.birthdate({ min: 18, max: 65, mode: 'age' }).toISOString().split('T')[0],
+  //   startDate: faker.date.recent({ days: 30 }).toISOString().split('T')[0],
+  //   department: faker.helpers.arrayElement(["Sales", "Marketing", "Engineering", "Human Resources", "Legal"]),
+  //   street: faker.location.streetAddress(),
+  //   city: faker.location.city(),
+  //   state: faker.location.state({ abbreviated: true }),
+  //   zipCode: faker.location.zipCode(),
+  // }).current;
 
 
   /**
@@ -134,7 +134,7 @@ export default function EmployeesAddView() {
         <div className="row">
           <div className="col-12">
             <EmployeeForm
-              initialValues={initialValues}
+              // initialValues={initialValues}
               onSubmit={submit}
               onChange={handleChange}
               processing={loading}

@@ -16,7 +16,7 @@ const config: AppConfigInterface = {
 	 * - EnvEnum.TEST: Testing environment
 	 * - EnvEnum.PROD: Production environment
 	 */
-	env: EnvEnum.DEV,
+	env: EnvEnum.PROD,
 	/**
 	 * The name of the application.
 	 * This is used for display purposes and can be customized.

@@ -1,5 +1,37 @@
 
+
+![Build](https://img.shields.io/badge/build-passing-brightgreen)
+![Coverage](https://img.shields.io/badge/coverage-54%25-yellow)
+![License](https://img.shields.io/badge/license-MIT-blue)
+
 # 🎉 HRNet React - Enterprise Architecture
+---
+
+## 🚀 Quick Start
+
+```bash
+git clone https://github.com/ton-org/hrnet-react.git
+cd hrnet-react
+npm install
+npm run dev
+```
+
+---
+
+## 🧪 Tests
+
+```bash
+npm test                # Run all tests
+npm test -- --coverage  # Run tests with coverage report
+```
+Le rapport de couverture sera généré dans le dossier `coverage/`.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
 
 > **Full migration from jQuery to React with enterprise-grade architecture**  
 > **Status: ✅ Production Ready**  
